@@ -10,7 +10,7 @@ resource "aws_vpc" "GoormProject-VPC" {
 resource "aws_subnet" "GoormProject-Public1" {
   vpc_id            = aws_vpc.GoormProject-VPC.id
   cidr_block        = "172.20.0.0/20"
-  availability_zone = "ap-northeast-2c"
+  availability_zone = "ap-northeast-2a"
   map_public_ip_on_launch = true
   tags = {
     Name = "GoormProject-Public1"
@@ -20,7 +20,7 @@ resource "aws_subnet" "GoormProject-Public1" {
 resource "aws_subnet" "GoormProject-Public2" {
   vpc_id            = aws_vpc.GoormProject-VPC.id
   cidr_block        = "172.20.16.0/20"
-  availability_zone = "ap-northeast-2a"
+  availability_zone = "ap-northeast-2c"
   map_public_ip_on_launch = true
   tags = {
     Name = "GoormProject-Public2"
