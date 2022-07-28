@@ -21,13 +21,6 @@ AWS Secret Access Key [None]: # AWS Secret Access Key
 Default region name [None]: # ap-northeast-2
 Default output format [None]: # Enter
 
-3. kube configure
-aws eks --region ap-northeast-2 update-kubeconfig --name GoormEKSCluster
-
-4. 노드 조회
-kubectl get nodes
-```
-
 # 3. Terraform Install
 OS 별 상이, Official DOCS 참조
 
@@ -46,4 +39,12 @@ terraform init
 
 4. EKS 생성 (apply)
 terraform apply
+```
+
+# 5. 생성한 eks cluster 등록
+1. kube configure
+aws eks --region ap-northeast-2 update-kubeconfig --name GoormEKSCluster
+
+2. 노드 조회
+kubectl get nodes
 ```
