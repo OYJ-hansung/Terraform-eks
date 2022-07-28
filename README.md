@@ -42,6 +42,7 @@ terraform apply
 ```
 
 # 5. 생성한 eks cluster 등록
+```bash
 1. kube configure
 aws eks --region ap-northeast-2 update-kubeconfig --name GoormEKSCluster
 
