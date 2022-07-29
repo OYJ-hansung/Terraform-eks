@@ -27,7 +27,6 @@ OS 별 상이, Official DOCS 참조
 [terraform.io](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
 
 # 4. Create EKS
-```bash
 1. git clone
 git clone https://github.com/KWSong1995/goorm_eks.git
 
