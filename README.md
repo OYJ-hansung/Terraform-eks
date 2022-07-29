@@ -23,7 +23,6 @@ Default output format [None]: # Enter
 
 # 3. Terraform Install
 OS 별 상이, Official DOCS 참조
-
 [terraform.io](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
 
 # 4. Create EKS
