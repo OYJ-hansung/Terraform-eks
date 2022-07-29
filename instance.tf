@@ -38,6 +38,8 @@ resource "aws_instance" "buildsvr" {
                 sudo systemctl daemon-reload
                 sudo systemctl restart docker
                 sudo service jenkins restart
+                curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+                sudo mv kustomize /usr/local/bin 
                 EOF
   tags = {
     Name = "Build Server"
