@@ -47,7 +47,7 @@ resource "aws_instance" "buildsvr" {
     Name = "Build Server"
   }
 }
-data "aws_eip" "by_allocation_id" {
+resource "aws_eip" "by_allocation_id" {
   vpc = true
   id = "eipalloc-0b7a0bf5c15f6d539"
   instance = "${aws_instance.buildsvr.id}"
