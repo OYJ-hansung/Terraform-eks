@@ -4,7 +4,7 @@ resource "aws_eks_node_group" "eks-nodes-t2" {
   node_group_name = "eks-nodes-t2"
   subnet_ids      = [aws_subnet.GoormProject-Public1.id]
   node_role_arn   = aws_iam_role.Goorm-eks-nodes-role.arn
-  instance_types  = ["t2.medium"]
+  instance_types  = ["t2.large"]
   disk_size = 20
 
   labels = {
