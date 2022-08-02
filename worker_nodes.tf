@@ -8,7 +8,7 @@ resource "aws_eks_node_group" "eks-nodes-t2" {
   disk_size = 20
 
   labels = {
-    "role" = "eks-t2-medium"
+    "role" = "eks-t2-large"
   }
 
   scaling_config {
@@ -24,6 +24,6 @@ resource "aws_eks_node_group" "eks-nodes-t2" {
   ]
 
   tags = {
-    "Name" = "${aws_eks_cluster.GoormEKSCluster.name}-eks-t2-medium-Node"
+    "Name" = "${aws_eks_cluster.GoormEKSCluster.name}-eks-t2-large-Node"
   }
 }
