@@ -11,7 +11,7 @@ resource "aws_security_group" "GoormEKSClusterSG" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   
-  egress {
+  ingress {
     from_port   = 0
     to_port     = 65535
     protocol    = "tcp"
