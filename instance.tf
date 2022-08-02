@@ -47,8 +47,12 @@ resource "aws_instance" "buildsvr" {
     Name = "Build Server"
   }
 }
-resource "aws_eip" "by_allocation_id" {
-  vpc = true
+
+data "aws_eip" "proxy_ip" {
   id = "eipalloc-0b7a0bf5c15f6d539"
-  instance = "${aws_instance.buildsvr.id}"
+}
+
+resource "aws_eip_association" "proxy_eip" {
+  instance_id   = "${aws_instance.buildsvr.id}"
+  allocation_id = "${data.aws_eip.proxy_ip.id}"
 }
