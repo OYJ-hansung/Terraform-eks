@@ -6,8 +6,6 @@ data "aws_key_pair" "buildsvr_key"{
     }
 }
 
-
-
 resource "aws_instance" "buildsvr" {
   ami           = "ami-0ea5eb4b05645aa8a" # ap-northeast-2 Ubuntu Server 20.04 LTS x64(x86)
   instance_type = "t2.medium" # 인스턴스 유형
