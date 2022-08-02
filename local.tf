@@ -20,12 +20,7 @@ resource "null_resource" "this" {
   }
     
   provisioner "local-exec" {
-    command = "kubectl patch svc argocd-server -n argocd -p '{'spec': {'type': 'LoadBalancer'}}'"
-  }
-    
-  provisioner "local-exec" {
-    command = "kubectl patch svc argocd-server -n argocd -p '{\"spec\": {\"type\": \"LoadBalancer\"}}'
-"
+    command = "kubectl patch svc argocd-server -n argocd -p '{\"spec\": {\"type\": \"LoadBalancer\"}}'"
   }
   
   depends_on = [
