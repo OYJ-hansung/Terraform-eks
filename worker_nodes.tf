@@ -17,6 +17,10 @@ resource "aws_eks_node_group" "eks-nodes-t2" {
     max_size     = 4
   }
 
+  remote_access {
+    source_security_group_ids = [aws_security_group.GoormEKSClusterSG.id]
+  }
+  
   depends_on = [
     aws_iam_role_policy_attachment.eks-node-EKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.eks-node-EKS_CNI_Policy,
