@@ -19,6 +19,7 @@ resource "aws_eks_node_group" "eks-nodes-t2" {
 
   remote_access {
     source_security_group_ids = [aws_security_group.GoormEKSClusterSG.id]
+    ec2_ssh_key               = "key0722"
   }
   
   depends_on = [
