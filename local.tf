@@ -23,6 +23,16 @@ resource "null_resource" "this" {
     command = "kubectl patch svc argocd-server -n argocd -p '{\"spec\": {\"type\": \"LoadBalancer\"}}'"
   }
   
+  provisioner "local-exec" {
+    working_dir = "/home/ubuntu/argocd-deploy"
+    command = "kubectl apply -f argoapp-front.yaml"
+  }
+  
+  provisioner "local-exec" {
+    working_dir = "/home/ubuntu/argocd-deploy"
+    command = "kubectl apply -f argoapp-back.yaml"
+  }
+  
   depends_on = [
     aws_eks_cluster.GoormEKSCluster,
     aws_eks_node_group.eks-nodes-t2
